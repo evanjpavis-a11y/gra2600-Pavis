@@ -1,0 +1,84 @@
+
+h1.hero {
+  font-family:Trebuchet MS;font-size: 45px;
+}
+
+ul, li, h1, h2, p, div {
+    border: 1px solid black;
+    margin: 0px;
+}
+
+body {
+    margin: 100px auto; /* auto side margin centers it */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+ul.navlist li {
+    border: 1px solid green;
+    padding: 10px 4px;
+}
+
+p {color:blue;}
+
+ul, li, h1, h2, p, div {
+    background-color: rgb(226, 225, 224);
+}
+
+header.site-header {
+    margin-bottom:10px;
+}
+
+h1,h2,h3,h4 {color:green;} /* notice how h1 is not changing. class hero takes precedent. */
+ul {color:brown;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+ol {color:purple;
+    font-family:sans-serif;
+}
+
+h1.hero {
+    background-image: url(/assets/pexels-lonneke-meijer-2150827437-31793897.jpg);
+    min-height: 400px;
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items:flex-end;
+}
+
+a {
+    color: blueviolet;
+    line-height: 2
+}
+
+
+ul.navlist li {
+  border: 2px solid green;
+  text-decoration: none;
+  font-weight: 600;
+  color:#1d5c8f
+}
+
+
+ul.navlist {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 2px solid blue;
+  background-color: red;
+  justify-content: center;
+  align-items: center;
+}
+
+ul.navlist li a {
+  text-decoration: none;
+  color: red;
+  font-weight: 600;
+  background-color:gray;
+}
+
