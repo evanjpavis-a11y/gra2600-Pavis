@@ -3,7 +3,7 @@ h1.hero {
   font-family:Trebuchet MS;font-size: 45px;
 }
 
-ul, li, h1, h2, p, div {
+ul, li, h1, h2, p, div, .logo {
     border: 1px solid black;
     margin: 0px;
 }
@@ -13,7 +13,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
+.logo {
+    color:orange;
+    text-decoration: none;
+    font-size:25px;
+    background-color: gray;
+    background-position: center;
+    display: flex;
+}
 ul.navlist li {
     border: 1px solid green;
     padding: 10px 4px;
@@ -27,6 +34,7 @@ ul, li, h1, h2, p, div {
 
 header.site-header {
     margin-bottom:10px;
+    background-color:gray;
 }
 
 h1,h2,h3,h4 {color:green;} /* notice how h1 is not changing. class hero takes precedent. */
@@ -38,16 +46,6 @@ ol {color:purple;
     font-family:sans-serif;
 }
 
-h1.hero {
-    background-image: url(/assets/pexels-lonneke-meijer-2150827437-31793897.jpg);
-    min-height: 400px;
-    background-size:cover;
-    background-position:center;
-    background-repeat: no-repeat;
-
-    display: flex;
-    align-items:flex-end;
-}
 
 a {
     color: blueviolet;
@@ -59,26 +57,232 @@ ul.navlist li {
   border: 2px solid green;
   text-decoration: none;
   font-weight: 600;
-  color:#1d5c8f
+  color:#1d5c8f;
+  list-style: none;
 }
 
 
 ul.navlist {
   display: flex;
-  gap: 24px;
+  gap: 15px;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 20px 20px 20px 20px;
   border: 2px solid blue;
-  background-color: red;
+  background-color: black;
   justify-content: center;
   align-items: center;
 }
 
 ul.navlist li a {
   text-decoration: none;
-  color: red;
+  color: lightblue;
   font-weight: 600;
   background-color:gray;
 }
 
+/* 9/22 additions */
+/*flex and grid styles*/
+.flex-demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 10px;
+  align-items: stretch;
+  border-radius: 0px 12px 0px 12px;
+}
+
+.grid-demo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction:column;
+  background: rgb(60, 60, 60);
+  border: 2px dotted green;
+  color: white;
+  flex: 0 0 250px;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.card img {
+  border-radius: 8px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.card h4 {
+  margin: 12px 0 6px;
+  font-size: 22px;
+}
+
+.card p {
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+
+.button {
+  display: inline-block;
+  margin-top: auto;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background-color: green;
+  color: white;
+  font-family: Georgia, serif;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button:hover,
+.button:focus {
+  background-color: darkgreen;
+}
+ 
+.grid-demo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+  h1.hero {
+    background-image: url(/assets/pexels-lonneke-meijer-2150827437-31793897.jpg);
+    min-height: 400px;
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items:flex-end;
+}
+h4.phero1 {
+    size: 50px;
+}
+
+/* 10/1 changes */
+
+.has-dropdown {
+  position: relative;
+}
+
+.submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  padding: 6px 0;
+  background-color: #333333;
+  border-radius: 6px;
+}
+
+.submenu a {
+  padding: 8px 16px;
+}
+
+.has-dropdown:hover .submenu {
+  display: block;
+}
+
+.logobox {
+    padding: 25px;
+}
+
+.navlist a {
+display: block;
+  padding: 10px 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.navlist a:hover {
+  background-color: yellow;
+}
+
+.navlist a:focus {
+  outline: 2px solid white;
+  outline-offset: -2px;
+}
+
+header {
+  background-color: #222222;
+  position:sticky;
+}
+
+header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 28px;
+}
+
+.navlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* 10/5 late night work */
+
+.indexhero {
+  background-image: url("/assets/UltraIndexImage.jpg");
+  /* I have no idea why the background image won't show up. I have tried several times.*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh; 
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* make more content for each page in the morning please. Add an image, page title and layout for content on each.*/
+/* If you want to put it into different HTML, change the names & references in template lines 50 and up. I believe in you.*/
+
+.abouthero {
+  background-image: url("/assets/UltraDeepBlue.jpg");
+  /* I have no idea why the background image won't show up. I have tried several times.*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh; 
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.contacthero {
+  background-image: url("/assets/UltraEncore.jpg");
+  /* I have no idea why the background image won't show up. I have tried several times.*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh; 
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* family, landscapes, etc are placeholder pages. Will soon be replaced with pdescription, pgameplay and previews pages.*/
