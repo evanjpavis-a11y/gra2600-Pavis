@@ -1,12 +1,168 @@
 <!--do you remember the 21st night of september-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+@import url('https://googleapis.com');
+
+
+body {
+    background-color: #000000; 
+    background-image: url('/assets/UltraMainMenu.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+/* container/layout */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0c1017;
+    padding: 15px 40px;
+    border-bottom: 4px solid #ff003c;
+    box-shadow: 0 0 20px rgba(255, 0, 60, 0.2);
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 2px;
+}
+
+/* logo box*/
+.logobox .logo {
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 0 0 10px #ff003c;
+}
+
+.logobox .logo:hover {
+    color: #ff003c;
+    text-shadow: 0 0 15px #ff003c, 0 0 30px #ff003c;
+}
+
+/* navlist*/
+.navlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.navlist > li {
+    position: relative;
+}
+
+/* --- Menu Links --- */
+.navlist a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    padding: 5px 15px;
+    border: 2px solid transparent;
+    transition: all 0.15s ease-in-out; /*link color transition*/
+}
+
+
+.navlist > li > a:hover, /*hover effect for the panel*/
+.has-dropdown:hover > a {
+    color: #05070a;
+    background-color: #00ffff;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 15px #00ffff;
+}
+
+/* --- Dropdown / Submenu --- */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -10px;
+    list-style: none;
+    background-color: rgba(12, 16, 23, 0.95); /* translucent panel!!!!! */
+    border: 2px solid #ff003c;
+    padding: 10px 0;
+    min-width: 180px;
+    z-index: 100;
+    box-shadow: 0 5px 15px rgba(255, 0, 60, 0.3);
+}
+
+.has-dropdown:hover .submenu { /* hover dropdown */
+    display: block;
+}
+
+.submenu li a {
+    font-family: 'Share Tech Mono', monospace; /* Tech subtext look */
+    font-size: 1.1rem;
+    padding: 8px 20px;
+    border: none;
+}
+
+.submenu li a:hover {
+    background-color: #ff003c;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+p, h1, h2{
+  font-size: 20;
+  font-weight: bold;
+  color: white;;             
+  -webkit-text-stroke: 0.2px red; /* gray outside */
+}
+
+.translucent-box {
+  background-color: rgba(128, 128, 128, 0.5); /* 128,128,128 is gray, 0.5 is half translucent */
+  padding: 20px;
+  border-radius: 8px;  /* softens corners */
+  max-width: 500px;   /* limits box width */
+  margin: 20px auto;   /* centers box on the page */
+}
+
+ </style>
+  <div class="container">
+  <!-- Layout role: centers header content -->
+  <div class="logobox">
+    
+    <a class="logo" href="index.html">an incorrect summary of ultrakill</a>
+  </div>
+  <nav>
+    <!-- Semantic role: primary navigation -->
+    <ul class="navlist">
+      <!-- Semantic role: list of navigation links -->
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact/Credits</a></li>
+      
+      <li class="has-dropdown">
+        <a href="previews.html">Game Reviews</a>
+        <ul class="submenu">
+          <li><a href="preview1.html">Review 1</a></li>
+          <li><a href="preview2.html">Review 2</a></li>
+          <li><a href="preview3.html">Review 3</a></li>
+        </ul>
+      </li> 
+      <li><a href="pdescription.html">Game Description</a></li>
+      <li><a href="pgameplay.html">Gameplay</a></li>
+    </ul>
+  </nav>
+</div>
+
+
 <main>
   <section class="indexhero">
     <div class="indexhero-content">
-    <h1>Hello! This is the WIP home page.</h1>
-    <p>Welcome to the home page! For some reason the background image isn't working. <br> </p>
-     <a href="about.html" class="btn">Here's a link to the about page.</a>
-     <a href="contact.html" class="btn">Here's a link to the contact page.</a>
+      <div class="translucent-box">
+    <h1>ULTRAKILL from my perspective:</h1>
+    <p>This is where I'll be covering both my personal opinions on ULTRAKILL and
+    why I find it to be such an incredible game.</p>
+     <h2> The Personality</h2>
+     <p> Ultrakill outside of any mentions of gameplay just has this charm in every aspect of its being. it has these early 2000's DOOM graphics that it leans into incredibly well.</p>
 </div>
     </section>
 </main>
-git add .

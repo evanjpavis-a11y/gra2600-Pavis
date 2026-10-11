@@ -1,9 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+@import url('https://googleapis.com');
+
+:root { /* has the colors remembered and named*/
+    --bg-dark: #05070a;
+    --panel-dark: #0c1017;
+    --ultrakill-blue: #00ffff;
+    --ultrakill-red: #ff003c;
+    --text-light: #ffffff;
+    --border-glow: 2px solid #00ffff;
+}
+
+body {
+    background-color: #000000; 
+    background-image: url('/assets/UltraMainMenu.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+/* container/layout */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--panel-dark);
+    padding: 15px 40px;
+    border-bottom: 4px solid var(--ultrakill-red);
+    box-shadow: 0 0 20px rgba(255, 0, 60, 0.2);
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 2px;
+}
+
+/* logo box*/
+.logobox .logo {
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--text-light);
+    text-decoration: none;
+    text-shadow: 0 0 10px var(--ultrakill-red);
+}
+
+.logobox .logo:hover {
+    color: var(--ultrakill-red);
+    text-shadow: 0 0 15px var(--ultrakill-red), 0 0 30px var(--ultrakill-red);
+}
+
+/* navlist*/
+.navlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.navlist > li {
+    position: relative;
+}
+
+/* --- Menu Links --- */
+.navlist a {
+    display: block;
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    padding: 5px 15px;
+    border: 2px solid transparent;
+    transition: all 0.15s ease-in-out; /*link color transition*/
+}
+
+
+.navlist > li > a:hover, /*hover effect for the panel*/
+.has-dropdown:hover > a {
+    color: var(--bg-dark);
+    background-color: var(--ultrakill-blue);
+    border: 2px solid var(--ultrakill-blue);
+    box-shadow: 0 0 15px var(--ultrakill-blue);
+}
+
+/* --- Dropdown / Submenu --- */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -10px;
+    list-style: none;
+    background-color: rgba(12, 16, 23, 0.95); /* translucent panel!!!!! */
+    border: 2px solid var(--ultrakill-red);
+    padding: 10px 0;
+    min-width: 180px;
+    z-index: 100;
+    box-shadow: 0 5px 15px rgba(255, 0, 60, 0.3);
+}
+
+.has-dropdown:hover .submenu { /* hover dropdown */
+    display: block;
+}
+
+.submenu li a {
+    font-family: 'Share Tech Mono', monospace; /* Tech subtext look */
+    font-size: 1.1rem;
+    padding: 8px 20px;
+    border: none;
+}
+
+.submenu li a:hover {
+    background-color: var(--ultrakill-red);
+    color: var(--text-light);
+    box-shadow: none;
+}
+
+p, h1, h2 {
+  font-size: 20;
+  font-weight: bold;
+  color: white;;             
+  -webkit-text-stroke: 0.2px red; /* Gray outside */
+}
+
+.translucent-box {
+  background-color: rgba(128, 128, 128, 0.5); /* 128,128,128 is Gray | 0.5 is 50% Translucent */
+  padding: 20px;
+  border-radius: 8px;                         /* Softens the corners */
+  max-width: 500px;                           /* Limits the box width */
+  margin: 20px auto;                          /* Centers the box on the page */
+}
+
+ </style>
+  <div class="container">
+  <!-- Layout role: centers header content -->
+  <div class="logobox">
+    
+    <a class="logo" href="index.html">an incorrect summary of ultrakill</a>
+  </div>
+  <nav>
+    <!-- Semantic role: primary navigation -->
+    <ul class="navlist">
+      <!-- Semantic role: list of navigation links -->
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+       <li><a href="contact.html">Credits/Contact</a></li>
+      
+      <li class="has-dropdown">
+        <a href="previews.html">Game Reviews</a>
+        <ul class="submenu">
+          <li><a href="preview1.html">Review 1</a></li>
+          <li><a href="preview2.html">Review 2</a></li>
+          <li><a href="preview3.html">Review 3</a></li>
+        </ul>
+      </li> 
+      <li><a href="pdescription.html">Game Description</a></li>
+      <li><a href="pgameplay.html">Gameplay</a></li>
+    </ul>
+  </nav>
+</div>
+
+
 <main>
   <section class="contacthero">
     <div class="contactherocontent">
-    <h1>Contact Page WIP.</h1>
-    <p>Welcome to WIP About page. here I will give a brief rundown on myself and the developers of the game. <br> Here's my contact if you need to reach out: (placeholder)</p>
-    <a href="index.html" class="btn">Here's a link back to the Home page..</a>
-  </div>
-</section>
+      <div class="translucent-box">
+    <h1>Contact & Credits Page!</h1>
+    <p>Welcome to the About page. here I will give a brief rundown on myself and the developers of the game. <br> Here's my contact if you need to reach out: rexx.j.parra@gmail.com </p>
+     <h2>Developer Credits</h2>
+</div>
+    </section>
 </main>
