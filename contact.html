@@ -116,19 +116,40 @@ body {
     box-shadow: none;
 }
 
-p, h1, h2 {
+p, h1, h2, legend {
   font-size: 20;
   font-weight: bold;
   color: white;;             
-  -webkit-text-stroke: 0.2px red; /* Gray outside */
+  -webkit-text-stroke: 0.2px red; 
 }
 
 .translucent-box {
   background-color: rgba(128, 128, 128, 0.5); /* 128,128,128 is Gray | 0.5 is 50% Translucent */
   padding: 20px;
-  border-radius: 8px;                         /* Softens the corners */
-  max-width: 500px;                           /* Limits the box width */
-  margin: 20px auto;                          /* Centers the box on the page */
+  border-radius: 8px;    /* Softens corners */
+  max-width: 500px;    /* Limits box width */
+  margin: 20px auto;  /* Centers box on page yay */
+}
+
+form {
+  max-width:500px;
+  min-width:300px;
+  margin: auto;
+  border: 5px solid red;
+  background-color: rgba(128, 128, 128, 0.5);
+  padding: 25px 0px 25px 25px;
+}
+
+input {
+  width: 90%;
+  height: 25px;
+  font-size: 15px;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+#message:not(:placeholder-shown):invalid {
+  border-color: #ff4d4d; /* evil and malicious invalid coloring*/
+  background-color: #ffe6e6; 
 }
 
  </style>
@@ -169,21 +190,56 @@ p, h1, h2 {
      <h2>Developer Credits</h2>
      <p>.</p>
      <h2>Form</h2>
-     <p>https://formspree.io/f/maeqpdpn</p>
 
      <form action="https://formspree.io/f/maeqpdpn" method="POST" id="contact-form">
-     <p><label for="first-name">First Name</label><input type="text" id="first-name" name="first-name"></p>
+     <p><label for="first-name">First Name</label>
+      <input type="text" id="first-name" name="first-name" required></p>
 
-<p><label for="last-name">Last Name</label><input type="text" id="last-name" name="last-name"></p>
+<p><label for="last-name">Last Name</label>
+  <input type="text" id="last-name" name="last-name"></p>
 
-<p><label for="email">Email</label><input type="email" id="email" name="email" required></p>
+<p><label for="email">Email</label>
+  <input type="email" id="email" name="email" required></p>
 
-<p><label for="phone">Phone</label><input type="tel" id="phone" name="phone"></p>
+<p><label for="phone">Phone</label>
+  <input type="tel" id="phone" name="phone"></p>
 
-<p><label for="message">Message</label><textarea id="message" name="message" rows="6" cols="40"></textarea></p>
+<p><label for="message">Message (min 10, max 500)</label>
+  <textarea id="message" name="message" rows="6" cols="40" minlength="10" maxlength="500"></textarea></p>
 
-<p><button type="submit">Send Message</button></p>
-      </form>
+
+<!-- dropdown -->
+  <p>
+    <label for="reason">Reason for Contact</label>
+    <select id="reason" name="reason">
+      <option value="gquestion">Game Question</option>
+      <option value="suggestion">Suggestion</option>
+      <option value="other">Other</option>
+    </select>
+  </p>
+
+  <!--radio-->
+  <fieldset>
+    <legend>Preferred Contact Method</legend>
+    <p>
+      <input type="radio" id="contact-email" name="preferred-contact" value="email" checked>
+      <label for="contact-email">Email</label>
+    </p>
+    <p>
+      <input type="radio" id="contact-phone" name="preferred-contact" value="phone">
+      <label for="contact-phone">Phone</label>
+    </p>
+  </fieldset>
+
+  <!--checkbox-->
+  <p>
+    <input type="checkbox" id="nothing" name="nothing" value="yes">
+    <label for="nothing">Checkbox That Does Nothing</label>
+  </p>
+
+  
+  <p><button type="submit">Send Message</button></p> 
+</form>
 </div>
     </section>
 </main>
