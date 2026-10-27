@@ -123,7 +123,105 @@ p, h1, h2{
   max-width: 500px;   /* limits box width */
   margin: 20px auto;   /* centers box on the page */
 }
+ 
+ 
+/* Hide the checkbox itself */
+.hamburger input {
+    display: none;
+}
+ 
+ 
+header {
+    background-color: transparent;
+}
 
+/* Hide the hamburger and checkbox on desktop */
+.hamburger, 
+#nav-toggle {
+    display: none; 
+}
+
+/* Base hamburger styling (Always keep math values aligned) */
+.hamburger { 
+    flex-direction: column; 
+    justify-content: space-between; 
+    width: 30px; 
+    height: 22px; 
+    cursor: pointer; 
+    margin-right: 20px; 
+}
+
+.hamburger span { 
+    display: block; 
+    width: 30px; 
+    height: 3px; 
+    background-color: white; 
+    border-radius: 3px; 
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+/* Desktop Navigation (Visible by default) */
+nav {
+    display: block;
+}
+
+ul.navlist {
+    display: flex;
+    flex-direction: row; /* Horizontal on desktop */
+}
+
+ul.navlist li a {
+    color: blue;
+}
+
+
+/* ============================================
+   MEDIA QUERY — MOBILE (max-width: 768px)
+   ============================================ */
+@media (max-width: 768px) {
+ 
+    .hamburger {
+        display: flex; /* Show hamburger on mobile */
+    }
+ 
+    .header-container {
+        flex-direction: row;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+
+    /* Hide desktop nav layout, prepare mobile sidebar/dropdown */
+    nav {
+        display: none;
+        flex-basis: 100%;
+        width: 50%;
+        background-color: rgb(1, 1, 1);
+    }
+
+    /* Stack nav links vertically on mobile */
+    ul.navlist {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Show nav ONLY when checkbox is checked on mobile */
+    #nav-toggle:checked ~ nav {
+        display: block;
+    }
+
+    /* Animate hamburger lines to 'X' when open */
+    #nav-toggle:checked + .hamburger span:nth-child(2) {
+        transform: translateY(9.5px) rotate(45deg);
+    }
+
+    #nav-toggle:checked + .hamburger span:nth-child(3) {
+        opacity: 0;
+    }
+
+    #nav-toggle:checked + .hamburger span:nth-child(4) {
+        transform: translateY(-9.5px) rotate(-45deg);
+    }
+}
  </style>
   <div class="container">
   <!-- Layout role: centers header content -->
@@ -131,6 +229,13 @@ p, h1, h2{
     
     <a class="logo" href="index.html">an incorrect summary of ultrakill</a>
   </div>
+  <input type="checkbox" id="nav-toggle">
+  <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+    <input type="checkbox" id="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
   <nav>
     <!-- Semantic role: primary navigation -->
     <ul class="navlist">
