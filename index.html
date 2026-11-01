@@ -123,6 +123,10 @@ p, h1, h2{
   max-width: 500px;   /* limits box width */
   margin: 20px auto;   /* centers box on the page */
 }
+
+/* ============================================
+   HAMBURGER BUTTON
+   ============================================ */
  
  
 /* Hide the checkbox itself */
@@ -160,7 +164,7 @@ header {
     transition: transform 0.3s ease, opacity 0.3s ease; 
 }
 
-/* Desktop Navigation (Visible by default) */
+/* Desktop Nav (Visible by default) */
 nav {
     display: block;
 }
@@ -180,36 +184,78 @@ ul.navlist li a {
    ============================================ */
 @media (max-width: 768px) {
  
-    .hamburger {
-        display: flex; /* Show hamburger on mobile */
+    /* Header scaling */
+    h1 {
+        font-size: 2rem;      
+        line-height: 1.2;
     }
- 
+
+    h2 {
+        font-size: 1.6rem;     /* Scales down section headings */
+        margin-bottom: 15px;
+    }
+
+    /* Main content container */
+    .container {
+        padding-left: 15px;    
+        padding-right: 15px;
+        width: 100%;          
+    }
+
+    /*  Header & Layout */
     .header-container {
         flex-direction: row;
         align-items: center;
         padding-bottom: 10px;
+        padding-left: 15px;    /* Aligns header items with container padding */
+        padding-right: 15px;
     }
 
-    /* Hide desktop nav layout, prepare mobile sidebar/dropdown */
+    /*  burger  */
+    .hamburger {
+        display: flex;
+        position: fixed;       /* Keeps icon floating in place */
+        top: 20px;
+        right: 20px;
+        z-index: 20;           /* Sits ABOVE the mobile menu layer */
+    }
+ 
     nav {
-        display: none;
-        flex-basis: 100%;
-        width: 50%;
+        display: block; 
+        position: fixed;       /* Full height mobile drawer layout */
+        top: 0;
+        right: 0;
+        width: 75%;
+        height: 100vh;
         background-color: rgb(1, 1, 1);
+        z-index: 10;           /* Sits BELOW the hamburger layer */
+        
+        /* Slide animation */
+        transform: translateX(100%); 
+        transition: transform 0.3s ease-in-out;
     }
 
-    /* Stack nav links vertically on mobile */
+    /* Slide the menu onto the screen when checked */
+    #nav-toggle:checked ~ nav {
+        transform: translateX(0);
+    }
+
+    /* Menu Navigation */
     ul.navlist {
+        display: flex;
         flex-direction: column;
         width: 100%;
+        margin-top: 80px;      /* Pushes links down so they don't sit under the X */
     }
 
-    /* Show nav ONLY when checkbox is checked on mobile */
-    #nav-toggle:checked ~ nav {
+    ul.navlist li a {
         display: block;
+        padding: 15px 20px;    /* Larger target to touch */
+        font-size: 1.2rem;
+        color: blue;
     }
 
-    /* Animate hamburger lines to 'X' when open */
+    /* Hamburger X Animation  */
     #nav-toggle:checked + .hamburger span:nth-child(2) {
         transform: translateY(9.5px) rotate(45deg);
     }
@@ -221,6 +267,10 @@ ul.navlist li a {
     #nav-toggle:checked + .hamburger span:nth-child(4) {
         transform: translateY(-9.5px) rotate(-45deg);
     }
+
+    #nav-toggle:checked + .hamburger span {
+    background-color: #ff0000; /* makes the x red */
+}
 }
  </style>
   <div class="container">
