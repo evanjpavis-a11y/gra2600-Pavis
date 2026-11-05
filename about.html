@@ -108,11 +108,25 @@ body {
     box-shadow: none;
 }
 
-p, h1, h2{
+p, h1, h2, h3{
   font-size: 20;
   font-weight: bold;
   color: white;;             
   -webkit-text-stroke: 0.2px red; /* gray outside */
+}
+
+.translucent-box a {
+  font-size: 20; /* Note: Added 'px' as CSS requires units for font-size */
+  font-weight: bold;
+  color: #00e5ff; /* Vibrant neon cyan */
+  text-decoration: none;
+  -webkit-text-stroke: 0.2px red;
+  transition: color 0.2s ease;
+}
+
+/* Brightens on hover */
+a:hover {
+  color: grey; 
 }
 
 .translucent-box {
@@ -342,6 +356,13 @@ main {
     <p>Hello! This site was made mostly for me to rant about a game I like (ULTRAKILL by Arsi "Hakita" Patala) and why I think its great!</p>
      <h2> Why I'm doing this</h2>
      <p> I'm writing this mostly as a way to challenge myself and seeing if I'm even able to publish a website of this scale. I both love videogames, ESPECIALLY Hakita's work of art Ultrakill, and am greatly starting to enjoy web development as a medium, so I decided to try my hand at it!</p>
-</div>
+     <h2>Why Ultrakill?</h2>
+     <p>As of me writing this right now, Ultrakill has been in development for 8 years and 9 months. I have been a fan of this incredible game for hardly half of that, but I already feel nostalgic remembering back when every major update came out and I was excited for what was new, and utterly baffled when I found just how much harder it got from last time!</p>
+        <h3>Early Access games</h3>
+        <p>A bit of a side tangent, but early access games have an extreme grey area, especially when it comes to indie titles, as the game you play right now could be ENTIRELY different when full release comes out, not even mentioning the fact that depending on factors like how your game is taken by the public, there's a chance it gets dropped and won't fully release at all!
+          <p>It makes me ever more thankful that I believed in Hakita and his team to make Ultrakill the best it could possibly be over nearly a full decade of progress, and you could see every trick they've learned over the years as developers who a long time ago, had little to no idea what they were doing!</p>
+          <h2>I love videogames.</h2>
+          <p>I've been playing games, especially shooters for a long time, and I've seen Triple-A titles rise and fall over the years, and to ME, Ultrakill has stood out to go above and beyond in every sense. They very clearly love game development, and understand just what it is someone like me wants out of an arena shooter. I won't go too in depth, but for more on that, find out my take on the gameplay <a href="pgameplay.html">here</a>.</p>
+    </div>
     </section>
 </main>
