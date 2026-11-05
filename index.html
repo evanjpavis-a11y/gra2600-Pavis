@@ -8,7 +8,7 @@
 
 body {
     background-color: #000000; 
-    background-image: url('/assets/UltraMainMenu.png');
+    background-image: url('/assets/menu.mp4');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -179,6 +179,36 @@ ul.navlist li a {
 }
 
 
+/* Styling your translucent box to let the video peek through beautifully */
+.translucent-box {
+  background: rgba(0, 0, 0, 0.65); /* Dark tint with 65% transparency */
+  backdrop-filter: blur(5px); /* Soft blur effect on the video behind the text */
+  padding: 30px;
+  border-radius: 8px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; 
+  z-index: -1;       
+  pointer-events: none; 
+}
+
+
+.container, 
+main {
+  position: relative;
+  z-index: 1; 
+}
+
+
 /* ============================================
    MEDIA QUERY — MOBILE (max-width: 768px)
    ============================================ */
@@ -271,12 +301,13 @@ ul.navlist li a {
     #nav-toggle:checked + .hamburger span {
     background-color: #ff0000; /* makes the x red */
 }
+
 }
  </style>
+ 
   <div class="container">
   <!-- Layout role: centers header content -->
   <div class="logobox">
-    
     <a class="logo" href="index.html">an incorrect summary of ultrakill</a>
   </div>
   <input type="checkbox" id="nav-toggle">
@@ -285,15 +316,13 @@ ul.navlist li a {
     <span></span>
     <span></span>
     <span></span>
-</label>
+  </label>
   <nav>
     <!-- Semantic role: primary navigation -->
     <ul class="navlist">
-      <!-- Semantic role: list of navigation links -->
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact/Credits</a></li>
-      
       <li class="has-dropdown">
         <a href="previews.html">Game Reviews</a>
         <ul class="submenu">
@@ -308,16 +337,21 @@ ul.navlist li a {
   </nav>
 </div>
 
+<!-- The video sits globally in the background -->
+<video autoplay loop muted playsinline id="bg-video">
+  <source src="assets/menu.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
 
 <main>
   <section class="indexhero">
     <div class="indexhero-content">
       <div class="translucent-box">
-    <h1>ULTRAKILL from my perspective:</h1>
-    <p>This is where I'll be covering both my personal opinions on ULTRAKILL and
-    why I find it to be such an incredible game.</p>
-     <h2> The Personality</h2>
-     <p> Ultrakill outside of any mentions of gameplay just has this charm in every aspect of its being. it has these early 2000's DOOM graphics that it leans into incredibly well.</p>
-</div>
-    </section>
+        <h1>ULTRAKILL from my perspective:</h1>
+        <p>This is where I'll be covering both my personal opinions on ULTRAKILL and why I find it to be such an incredible game.</p>
+        <h2>The Personality</h2>
+        <p>Ultrakill outside of any mentions of gameplay just has this charm in every aspect of its being. it has these early 2000's DOOM graphics that it leans into incredibly well.</p>
+      </div>
+    </div> <!-- Fixed missing closing div tag here -->
+  </section>
 </main>
