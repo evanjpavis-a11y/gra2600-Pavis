@@ -28,6 +28,7 @@ body {
 }
 
 /* logo box*/
+
 .logobox .logo {
     font-size: 2rem;
     font-weight: 500;
@@ -229,6 +230,24 @@ main {
     background-color: #ff003c;
     color: #ffffff;
 }
+
+/* --- Safely scales down text before the mobile drawer menu triggers --- */
+@media (max-width: 1100px) and (min-width: 769px) {
+    .logobox .logo {
+        font-size: 1.4rem; /* Downsizes text to create breathing room */
+    }
+    
+    .navlist {
+        gap: 15px; /* Tightens the gaps between link objects */
+    }
+    
+    .navlist a {
+        font-size: 1.2rem;
+        padding: 5px 10px;
+    }
+}
+
+
 /* ============================================
    MEDIA QUERY — MOBILE (max-width: 768px)
    ============================================ */
@@ -269,6 +288,12 @@ main {
         right: 20px;
         z-index: 20;           /* Sits ABOVE the mobile menu layer */
     }
+
+    .logobox .logo {
+        font-size: 1.2rem; /* Shrinks the text size specifically on mobile screens */
+        white-space: normal; /* Allows long text to naturally break into two clean rows if needed */
+        display: block;
+    }
  
     nav {
         display: block; 
@@ -306,15 +331,15 @@ main {
     }
 
     /* Hamburger X Animation  */
-   #nav-toggle:checked + .hamburger span:nth-child(2) {
+   #nav-toggle:checked + .hamburger span:nth-child(1) {
         transform: translateY(9.5px) rotate(45deg);
     }
 
-    #nav-toggle:checked + .hamburger span:nth-child(3) {
+    #nav-toggle:checked + .hamburger span:nth-child(2) {
         opacity: 0;
     }
 
-    #nav-toggle:checked + .hamburger span:nth-child(4) {
+    #nav-toggle:checked + .hamburger span:nth-child(3) {
         transform: translateY(-9.5px) rotate(-45deg);
     }
 
@@ -331,9 +356,10 @@ main {
     
     <a class="logo" href="index.html">an incorrect synopsis of ultrakill</a>
   </div>
+
   <input type="checkbox" id="nav-toggle">
+
   <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
-    <input type="checkbox" id="nav-toggle">
     <span></span>
     <span></span>
     <span></span>
