@@ -65,6 +65,9 @@ body {
     padding: 5px 15px;
     border: 2px solid transparent;
     transition: all 0.15s ease-in-out; /*link color transition*/
+
+    white-space: normal; 
+    text-align: center;
 }
 
 
@@ -116,9 +119,9 @@ p, h1, h2, h3{
 }
 
 .translucent-box a {
-  font-size: 20; /* Note: Added 'px' as CSS requires units for font-size */
+  font-size: 20; 
   font-weight: bold;
-  color: #00e5ff; /* Vibrant neon cyan */
+  color: #00e5ff; /* neon cyan */
   text-decoration: none;
   -webkit-text-stroke: 0.2px red;
   transition: color 0.2s ease;
@@ -158,7 +161,6 @@ header {
     display: none; 
 }
 
-/* Base hamburger styling (Always keep math values aligned) */
 .hamburger { 
     flex-direction: column; 
     justify-content: space-between; 
@@ -191,38 +193,32 @@ ul.navlist li a {
     color: white;
 }
 
-
-/* Styling your translucent box to let the video peek through beautifully */
 .translucent-box {
-  background: rgba(0, 0, 0, 0.65); /* Dark tint with 65% transparency */
-  backdrop-filter: blur(5px); /* Soft blur effect on the video behind the text */
+  background: rgba(0, 0, 0, 0.65); /* 65% transparency */
+  backdrop-filter: blur(5px); /* Soft blur effect */
   padding: 30px;
   border-radius: 8px;
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
-/* 2. Elevate your header/navigation to the top layer */
 .container {
   position: relative;
-  z-index: 10; /* Higher number forces the menu to sit on top of everything */
+  z-index: 10; 
 }
 
-/* 3. Keep the content box above the video, but below the menu */
 main {
   position: relative;
-  z-index: 1; /* Lower than the container so it stays underneath the dropdowns */
+  z-index: 1; 
 }
 
-/* --- Safely scales down text before the mobile drawer menu triggers --- */
 @media (max-width: 1100px) and (min-width: 769px) {
     .logobox .logo {
-        font-size: 1.4rem; /* Downsizes text to create breathing room */
+        font-size: 1.4rem; /* Downsizes text */
     }
     
     .navlist {
-        gap: 15px; /* Tightens the gaps between link objects */
+        gap: 15px;
     }
     
     .navlist a {
@@ -245,13 +241,13 @@ main {
     }
 
      .logobox .logo {
-        font-size: 1.2rem; /* Shrinks the text size specifically on mobile screens */
-        white-space: normal; /* Allows long text to naturally break into two clean rows if needed */
+        font-size: 1.2rem; 
+        white-space: normal; 
         display: block;
      }
 
     h2 {
-        font-size: 1.6rem;     /* Scales down section headings */
+        font-size: 1.6rem;   /* Scales down section headings */
         margin-bottom: 15px;
     }
 
@@ -277,7 +273,7 @@ main {
         position: fixed;       /* Keeps icon floating in place */
         top: 20px;
         right: 20px;
-        z-index: 20;           /* Sits ABOVE the mobile menu layer */
+        z-index: 20;       /* Sits ABOVE the mobile menu layer */
     }
  
     nav {

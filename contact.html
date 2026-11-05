@@ -64,6 +64,9 @@ body {
     padding: 5px 15px;
     border: 2px solid transparent;
     transition: all 0.15s ease-in-out; /*link color transition*/
+
+    white-space: normal; 
+    text-align: center;
 }
 
 
@@ -95,7 +98,7 @@ body {
 }
 
 .submenu li a {
-    font-family: 'Share Tech Mono', monospace; /* Tech subtext look */
+    font-family: 'Share Tech Mono', monospace; 
     font-size: 1.1rem;
     padding: 8px 20px;
     border: none;
@@ -143,7 +146,6 @@ header {
     display: none; 
 }
 
-/* Base hamburger styling (Always keep math values aligned) */
 .hamburger { 
     flex-direction: column; 
     justify-content: space-between; 
@@ -177,10 +179,10 @@ ul.navlist li a {
 }
 
 
-/* Styling your translucent box to let the video peek through beautifully */
+
 .translucent-box {
-  background: rgba(0, 0, 0, 0.65); /* Dark tint with 65% transparency */
-  backdrop-filter: blur(5px); /* Soft blur effect on the video behind the text */
+  background: rgba(0, 0, 0, 0.65); /* 65% transparency */
+  backdrop-filter: blur(5px); /* Soft blur effect */
   padding: 30px;
   border-radius: 8px;
   color: #fff;
@@ -188,16 +190,14 @@ ul.navlist li a {
 }
 
 
-/* 2. Elevate your header/navigation to the top layer */
 .container {
   position: relative;
-  z-index: 10; /* Higher number forces the menu to sit on top of everything */
+  z-index: 10; /* forces the menu to sit on top of everything */
 }
 
-/* 3. Keep the content box above the video, but below the menu */
 main {
   position: relative;
-  z-index: 1; /* Lower than the container so it stays underneath the dropdowns */
+  z-index: 1; /* stays underneath the dropdowns */
 }
 
 p, h1, h2, legend, h3 {
@@ -208,8 +208,8 @@ p, h1, h2, legend, h3 {
 }
 
 .translucent-box {
-  background: rgba(0, 0, 0, 0.65); /* Dark tint with 65% transparency */
-  backdrop-filter: blur(5px); /* Soft blur effect on the video behind the text */
+  background: rgba(0, 0, 0, 0.65); /* 65% transparency */
+  backdrop-filter: blur(5px); /* Soft blur effect */
   padding: 30px;
   border-radius: 8px;
   color: #fff;
@@ -244,10 +244,9 @@ input {
   background-color: #ffe6e6; 
 }
 
-/* --- Safely scales down text before the mobile drawer menu triggers --- */
 @media (max-width: 1100px) and (min-width: 769px) {
     .logobox .logo {
-        font-size: 1.4rem; /* Downsizes text to create breathing room */
+        font-size: 1.4rem; /* Downsizes text */
     }
     
     .navlist {
@@ -273,8 +272,8 @@ input {
     }
 
     .logobox .logo {
-        font-size: 1.2rem; /* Shrinks the text size specifically on mobile screens */
-        white-space: normal; /* Allows long text to naturally break into two clean rows if needed */
+        font-size: 1.2rem; 
+        white-space: normal; 
         display: block;
      }
 

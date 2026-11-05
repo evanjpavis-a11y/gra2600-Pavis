@@ -49,21 +49,21 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 15px; /* FIX: Reduced from 30px to free up space */
+    gap: 15px; 
 }
 
 .navlist > li {
     position: relative;
 }
 
-/* --- Menu Links --- */
+/* Menu Links */
 .navlist a {
     display: block;
     color: #ffffff;
     text-decoration: none;
-    font-size: 1.4rem; /* FIX: Shrunk slightly from 1.6rem for desktop clearance */
+    font-size: 1.4rem; 
     text-transform: uppercase;
-    padding: 5px 10px; /* FIX: Reduced horizontal padding from 15px to 10px */
+    padding: 5px 10px; 
     border: 2px solid transparent;
     transition: all 0.15s ease-in-out; /*link color transition*/
 }
@@ -145,7 +145,6 @@ header {
     display: none; 
 }
 
-/* Base hamburger styling (Always keep math values aligned) */
 .hamburger { 
     flex-direction: column; 
     justify-content: space-between; 
@@ -178,48 +177,43 @@ ul.navlist li a {
     color: white;
 }
 
-
-/* Styling your translucent box to let the video peek through beautifully */
 .translucent-box {
-  background: rgba(0, 0, 0, 0.65); /* Dark tint with 65% transparency */
-  backdrop-filter: blur(5px); /* Soft blur effect on the video behind the text */
+  background: rgba(0, 0, 0, 0.65); /* 65% transparency */
+  backdrop-filter: blur(5px); /* Soft blur effect */
   padding: 30px;
   border-radius: 8px;
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
-/* 2. Elevate your header/navigation to the top layer */
 .container {
   position: relative;
-  z-index: 10; /* Higher number forces the menu to sit on top of everything */
+  z-index: 10; 
 }
 
-/* 3. Keep the content box above the video, but below the menu */
 main {
   position: relative;
-  z-index: 1; /* Lower than the container so it stays underneath the dropdowns */
+  z-index: 1; 
 }
 
 .translucent-box img {
-    width: 100%;         /* Forces the image to fill the box horizontally */
-    max-width: 100%;     /* Prevents it from ever spilling outside the box */
-    height: auto;        /* Maintains the original aspect ratio so it doesn't stretch distortion-style */
-    display: block;      /* Removes awkward blank spaces below the image */
-    margin: 15px auto;   /* Centers the image with clean breathing room top and bottom */
+    width: 100%;         
+    max-width: 100%;     
+    height: auto;        
+    display: block;      
+    margin: 15px auto;   
     border-radius: 4px; 
 }
 
 .card button {
-    background-color: #0c1017;      /* Matches your dark container color */
-    color: #ffffff;                 /* Clean white text */
-    font-family: 'Share Tech Mono', monospace; /* Matches your submenu text style */
+    background-color: #0c1017;     
+    color: #ffffff;                 
+    font-family: 'Share Tech Mono', monospace; 
     font-size: 1.1rem;
     text-transform: uppercase;
     padding: 10px 20px;
-    border: 2px solid #ff003c;      /* Clean red outline */
-    border-radius: 0px;             /* Hard, sharp retro corners */
+    border: 2px solid #ff003c;      
+    border-radius: 0px;            
     cursor: pointer;
     transition: background-color 0.15s ease;
     margin-top: 15px;
@@ -231,14 +225,13 @@ main {
     color: #ffffff;
 }
 
-/* --- Safely scales down text before the mobile drawer menu triggers --- */
 @media (max-width: 1100px) and (min-width: 769px) {
     .logobox .logo {
-        font-size: 1.4rem; /* Downsizes text to create breathing room */
+        font-size: 1.4rem; /* Downsizes text  */
     }
     
     .navlist {
-        gap: 15px; /* Tightens the gaps between link objects */
+        gap: 15px; 
     }
     
     .navlist a {
@@ -290,8 +283,8 @@ main {
     }
 
     .logobox .logo {
-        font-size: 1.2rem; /* Shrinks the text size specifically on mobile screens */
-        white-space: normal; /* Allows long text to naturally break into two clean rows if needed */
+        font-size: 1.2rem; /* Shrinks the text size  */
+        white-space: normal; 
         display: block;
     }
  
@@ -320,7 +313,7 @@ main {
         display: flex;
         flex-direction: column;
         width: 100%;
-        margin-top: 80px;      /* Pushes links down so they don't sit under the X */
+        margin-top: 80px;      
     }
 
     ul.navlist li a {
