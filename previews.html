@@ -48,7 +48,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 30px;
+    gap: 15px; /* FIX: Reduced from 30px to free up space */
 }
 
 .navlist > li {
@@ -60,9 +60,9 @@ body {
     display: block;
     color: #ffffff;
     text-decoration: none;
-    font-size: 1.6rem;
+    font-size: 1.4rem; /* FIX: Shrunk slightly from 1.6rem for desktop clearance */
     text-transform: uppercase;
-    padding: 5px 15px;
+    padding: 5px 10px; /* FIX: Reduced horizontal padding from 15px to 10px */
     border: 2px solid transparent;
     transition: all 0.15s ease-in-out; /*link color transition*/
 }
@@ -279,7 +279,7 @@ main {
     }
 
     /* Hamburger X Animation  */
-    #nav-toggle:checked + .hamburger span:nth-child(2) {
+   #nav-toggle:checked + .hamburger span:nth-child(2) {
         transform: translateY(9.5px) rotate(45deg);
     }
 

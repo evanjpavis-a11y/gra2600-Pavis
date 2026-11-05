@@ -4,18 +4,9 @@
   <style>
 @import url('https://googleapis.com');
 
-:root { /* has the colors remembered and named*/
-    --bg-dark: #05070a;
-    --panel-dark: #0c1017;
-    --ultrakill-blue: #00ffff;
-    --ultrakill-red: #ff003c;
-    --text-light: #ffffff;
-    --border-glow: 2px solid #00ffff;
-}
-
 body {
     background-color: #000000; 
-    background-image: url('/assets/UltraMainMenu.png');
+    background-image: url('/assets/SurfaceBG.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -27,9 +18,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--panel-dark);
+    background-color: #0c1017;
     padding: 15px 40px;
-    border-bottom: 4px solid var(--ultrakill-red);
+    border-bottom: 4px solid #ff003c;
     box-shadow: 0 0 20px rgba(255, 0, 60, 0.2);
     font-family: 'Teko', sans-serif;
     letter-spacing: 2px;
@@ -40,14 +31,14 @@ body {
     font-size: 2rem;
     font-weight: 500;
     text-transform: uppercase;
-    color: var(--text-light);
+    color: #ffffff;
     text-decoration: none;
-    text-shadow: 0 0 10px var(--ultrakill-red);
+    text-shadow: 0 0 10px #ff003c;
 }
 
 .logobox .logo:hover {
-    color: var(--ultrakill-red);
-    text-shadow: 0 0 15px var(--ultrakill-red), 0 0 30px var(--ultrakill-red);
+    color: #ff003c;
+    text-shadow: 0 0 15px #ff003c, 0 0 30px #ff003c;
 }
 
 /* navlist*/
@@ -66,7 +57,7 @@ body {
 /* --- Menu Links --- */
 .navlist a {
     display: block;
-    color: var(--text-light);
+    color: #ffffff;
     text-decoration: none;
     font-size: 1.6rem;
     text-transform: uppercase;
@@ -78,10 +69,10 @@ body {
 
 .navlist > li > a:hover, /*hover effect for the panel*/
 .has-dropdown:hover > a {
-    color: var(--bg-dark);
-    background-color: var(--ultrakill-blue);
-    border: 2px solid var(--ultrakill-blue);
-    box-shadow: 0 0 15px var(--ultrakill-blue);
+    color: #05070a;
+    background-color: #00ffff;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 15px #00ffff;
 }
 
 /* --- Dropdown / Submenu --- */
@@ -92,7 +83,7 @@ body {
     left: -10px;
     list-style: none;
     background-color: rgba(12, 16, 23, 0.95); /* translucent panel!!!!! */
-    border: 2px solid var(--ultrakill-red);
+    border: 2px solid #ff003c;
     padding: 10px 0;
     min-width: 180px;
     z-index: 100;
@@ -111,9 +102,102 @@ body {
 }
 
 .submenu li a:hover {
-    background-color: var(--ultrakill-red);
-    color: var(--text-light);
+    background-color: #ff003c;
+    color: #ffffff;
     box-shadow: none;
+}
+
+p, h1, h2{
+  font-size: 20;
+  font-weight: bold;
+  color: white;;             
+  -webkit-text-stroke: 0.2px red; /* gray outside */
+}
+
+.translucent-box {
+  background-color: rgba(128, 128, 128, 0.5); /* 128,128,128 is gray, 0.5 is half translucent */
+  padding: 20px;
+  border-radius: 8px;  /* softens corners */
+  max-width: 500px;   /* limits box width */
+  margin: 20px auto;   /* centers box on the page */
+}
+
+/* ============================================
+   HAMBURGER BUTTON
+   ============================================ */
+ 
+ 
+/* Hide the checkbox itself */
+.hamburger input {
+    display: none;
+}
+ 
+ 
+header {
+    background-color: transparent;
+}
+
+/* Hide the hamburger and checkbox on desktop */
+.hamburger, 
+#nav-toggle {
+    display: none; 
+}
+
+/* Base hamburger styling (Always keep math values aligned) */
+.hamburger { 
+    flex-direction: column; 
+    justify-content: space-between; 
+    width: 30px; 
+    height: 22px; 
+    cursor: pointer; 
+    margin-right: 20px; 
+}
+
+.hamburger span { 
+    display: block; 
+    width: 30px; 
+    height: 3px; 
+    background-color: white; 
+    border-radius: 3px; 
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+/* Desktop Nav (Visible by default) */
+nav {
+    display: block;
+}
+
+ul.navlist {
+    display: flex;
+    flex-direction: row; /* Horizontal on desktop */
+}
+
+ul.navlist li a {
+    color: white;
+}
+
+
+/* Styling your translucent box to let the video peek through beautifully */
+.translucent-box {
+  background: rgba(0, 0, 0, 0.65); /* Dark tint with 65% transparency */
+  backdrop-filter: blur(5px); /* Soft blur effect on the video behind the text */
+  padding: 30px;
+  border-radius: 8px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* 2. Elevate your header/navigation to the top layer */
+.container {
+  position: relative;
+  z-index: 10; /* Higher number forces the menu to sit on top of everything */
+}
+
+/* 3. Keep the content box above the video, but below the menu */
+main {
+  position: relative;
+  z-index: 1; /* Lower than the container so it stays underneath the dropdowns */
 }
 
 p, h1, h2, legend {
@@ -124,11 +208,12 @@ p, h1, h2, legend {
 }
 
 .translucent-box {
-  background-color: rgba(128, 128, 128, 0.5); /* 128,128,128 is Gray | 0.5 is 50% Translucent */
-  padding: 20px;
-  border-radius: 8px;    /* Softens corners */
-  max-width: 500px;    /* Limits box width */
-  margin: 20px auto;  /* Centers box on page yay */
+  background: rgba(0, 0, 0, 0.65); /* Dark tint with 65% transparency */
+  backdrop-filter: blur(5px); /* Soft blur effect on the video behind the text */
+  padding: 30px;
+  border-radius: 8px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 form {
@@ -152,6 +237,101 @@ input {
   background-color: #ffe6e6; 
 }
 
+/* ============================================
+   MEDIA QUERY — MOBILE (max-width: 768px)
+   ============================================ */
+@media (max-width: 768px) {
+ 
+    /* Header scaling */
+    h1 {
+        font-size: 2rem;      
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 1.6rem;     /* Scales down section headings */
+        margin-bottom: 15px;
+    }
+
+    /* Main content container */
+    .container {
+        padding-left: 15px;    
+        padding-right: 15px;
+        width: 100%;          
+    }
+
+    /*  Header & Layout */
+    .header-container {
+        flex-direction: row;
+        align-items: center;
+        padding-bottom: 10px;
+        padding-left: 15px;    /* Aligns header items with container padding */
+        padding-right: 15px;
+    }
+
+    /*  burger  */
+    .hamburger {
+        display: flex;
+        position: fixed;       /* Keeps icon floating in place */
+        top: 20px;
+        right: 20px;
+        z-index: 20;           /* Sits ABOVE the mobile menu layer */
+    }
+ 
+    nav {
+        display: block; 
+        position: fixed;       /* Full height mobile drawer layout */
+        top: 0;
+        right: 0;
+        width: 75%;
+        height: 100vh;
+        background-color: rgb(1, 1, 1);
+        z-index: 10;           /* Sits BELOW the hamburger layer */
+        
+        /* Slide animation */
+        transform: translateX(100%); 
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Slide the menu onto the screen when checked */
+    #nav-toggle:checked ~ nav {
+        transform: translateX(0);
+    }
+
+    /* Menu Navigation */
+    ul.navlist {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 80px;      /* Pushes links down so they don't sit under the X */
+    }
+
+    ul.navlist li a {
+        display: block;
+        padding: 15px 20px;    /* Larger target to touch */
+        font-size: 1.2rem;
+        color: blue;
+    }
+
+    /* Hamburger X Animation  */
+    #nav-toggle:checked + .hamburger span:nth-child(2) {
+        transform: translateY(9.5px) rotate(45deg);
+    }
+
+    #nav-toggle:checked + .hamburger span:nth-child(3) {
+        opacity: 0;
+    }
+
+    #nav-toggle:checked + .hamburger span:nth-child(4) {
+        transform: translateY(-9.5px) rotate(-45deg);
+    }
+
+    #nav-toggle:checked + .hamburger span {
+    background-color: #ff0000; /* makes the x red */
+}
+}
+
+
  </style>
   <div class="container">
   <!-- Layout role: centers header content -->
@@ -159,6 +339,14 @@ input {
     
     <a class="logo" href="index.html">an incorrect summary of ultrakill</a>
   </div>
+
+  <input type="checkbox" id="nav-toggle">
+  <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
+    <input type="checkbox" id="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+
   <nav>
     <!-- Semantic role: primary navigation -->
     <ul class="navlist">
