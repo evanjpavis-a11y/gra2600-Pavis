@@ -201,6 +201,11 @@ main {
   z-index: 1; /* Lower than the container so it stays underneath the dropdowns */
 }
 
+iframe {
+    max-width: 100%; /* Prevents the video from breaking past the borders of your box */
+    border: 2px solid #ff003c; /* Optional: Matches your clean red theme borders */
+}
+
 
 /* ============================================
    MEDIA QUERY — MOBILE (max-width: 768px)
@@ -339,6 +344,14 @@ main {
     <div class="preview1hero-content">
       <div class="translucent-box">
     <h1>Review 1</h1>
+    <div class="card">
+  <h2>By Leon Massey</h2>
+  
+  <!-- Paste the YouTube embed code directly here -->
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/c5MF_6pk4A4?si=U99507KRtYYLPdpF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  
+</div>
+
 </div>
     </section>
 </main>

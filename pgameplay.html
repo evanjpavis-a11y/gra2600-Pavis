@@ -201,6 +201,14 @@ main {
   z-index: 1; /* Lower than the container so it stays underneath the dropdowns */
 }
 
+.webm-loop {
+    width: 100%;         /* Fits the width of whatever box it is inside */
+    max-width: 100%;     /* Prevents it from breaking the layout limits */
+    height: auto;        /* Preserves the video's original aspect ratio */
+    border: 2px solid #ff003c; /* Optional: keeps your sharp ULTRAKILL red theme */
+    display: block;
+}
+
 
 /* ============================================
    MEDIA QUERY — MOBILE (max-width: 768px)
@@ -339,6 +347,12 @@ main {
     <div class="gameplayhero-content">
       <div class="translucent-box">
     <h1>Gameplay</h1>
+
+    <video autoplay loop muted playsinline class="webm-loop">
+  <source src="/assets/Mankind1.webm" type="video/webm">
+  Your browser does not support HTML5 video.
+</video>
+
     <p>ULTRAKILL is EXTREMELY high-octane and with a large skill ceiling. If you are new to shooter games, it is very recommended you stick to one of the earlier difficulties, Standard or Lenient. If you are not interested in having any strain or hardship at all, you are looking for Harmless difficulty.</p>
      
 </div>
