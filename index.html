@@ -148,7 +148,7 @@ header {
     display: none; 
 }
 
-/* Base hamburger styling (Always keep math values aligned) */
+/* Base hamburger styling  */
 .hamburger { 
     flex-direction: column; 
     justify-content: space-between; 
@@ -213,6 +213,57 @@ main {
   z-index: 1; 
 }
 
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.translucent-box.card {
+    margin: 0;         
+    max-width: 100%;   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    border: 1px solid rgba(255, 0, 60, 0.2);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.translucent-box.card:hover {
+    border-color: #ff003c;
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(255, 0, 60, 0.15);
+}
+
+.translucent-box.card a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.translucent-box.card button {
+    background-color: #0c1017;     
+    color: #ffffff;                 
+    font-family: 'Share Tech Mono', monospace; 
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: 2px solid #ff003c;      
+    border-radius: 0px;            
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    margin-top: 15px;
+}
+
+
+.card button:hover {
+    background-color: #ff003c;
+    color: #ffffff;
+}
 
 @media (max-width: 1100px) and (min-width: 769px) {
     .logobox .logo {
@@ -364,21 +415,56 @@ main {
   </nav>
 </div>
 
-<!-- The video sits globally in the background -->
 <video autoplay loop muted playsinline id="bg-video">
   <source src="assets/menu.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 
 <main>
-  <section class="indexhero">
-    <div class="indexhero-content">
-      <div class="translucent-box">
-        <h1>ULTRAKILL from my perspective:</h1>
-        <p>This is where I'll be covering both my personal opinions on ULTRAKILL and why I find it to be such an incredible game.</p>
-        <h2>The Personality</h2>
-        <p>Ultrakill outside of any mentions of gameplay just has this charm in every aspect of its being. it has these early 2000's DOOM graphics that it leans into incredibly well.</p>
-      </div>
-    </div> <!-- Fixed missing closing div tag here -->
-  </section>
+  <!-- In a cargo (intro) box -->
+  <div class="translucent-box">
+    <h1>An Incorrect Synopsis of Ultrakill</h1>
+    <p>Consider this a quick navigation tool for the rest of the pages!</p>
+  </div>
+
+  <!-- NavCard Grid -->
+  <div class="card-grid">
+    
+    <!-- Card 1: About -->
+    <div class="translucent-box card">
+      <h2>About the Site</h2>
+      <p>Here I explain why I made this site, and just what exactly I wanted to say.</p>
+      <a href="about.html"><button>Read About</button></a>
+    </div>
+
+    <!-- Card 2: Reviews -->
+    <div class="translucent-box card">
+      <h2>Game Reviews</h2>
+      <p>Here are a few reviews of the game I thought were accurate and helpful!</p>
+      <a href="previews.html"><button>Read Reviews</button></a>
+    </div>
+
+    <!-- Card 3: Game Description -->
+    <div class="translucent-box card">
+      <h2>Game Description</h2>
+      <p>The actual synopsis. A basic possibly mostly somewhat correct overview of what I think Ultrakill's plot is.</p>
+      <a href="pdescription.html"><button>Read Description</button></a>
+    </div>
+
+    <!-- Card 4: Gameplay Mechanics -->
+    <div class="translucent-box card">
+      <h2>Gameplay & Mechanics</h2>
+      <p>Here's some details I liked or otherwise wanted to note about the gameplay, and a few of the mechanics I thought were interesting!</p>
+      <a href="pgameplay.html"><button>Read Gameplay</button></a>
+    </div>
+
+    <!-- Card 5: Credits & Contact -->
+    <div class="translucent-box card">
+      <h2>Credits / Contact</h2>
+      <p>Here I give credits to the developers, and provide contact info if you want to reach out!</p>
+      <a href="contact.html"><button>Read Credits/Contact</button></a>
+    </div>
+
+  </div>
 </main>
+
