@@ -61,9 +61,13 @@ body {
     text-decoration: none;
     font-size: 1.6rem;
     text-transform: uppercase;
-    padding: 5px 15px;
+    padding: 5px 10px; /* Reduced side padding slightly to save massive horizontal space */
     border: 2px solid transparent;
-    transition: all 0.15s ease-in-out; /*link color transition*/
+    transition: all 0.15s ease-in-out;
+    
+    /* Allows multi-word links to break onto a new row instead of breaking your layout */
+    white-space: normal; 
+    text-align: center;
 }
 
 
