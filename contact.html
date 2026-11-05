@@ -200,7 +200,7 @@ main {
   z-index: 1; /* Lower than the container so it stays underneath the dropdowns */
 }
 
-p, h1, h2, legend {
+p, h1, h2, legend, h3 {
   font-size: 20;
   font-weight: bold;
   color: white;;             
@@ -214,6 +214,13 @@ p, h1, h2, legend {
   border-radius: 8px;
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.translucent-box li {
+  font-size: 20;
+  font-weight: bold;
+  color: white;;             
+  -webkit-text-stroke: 0.2px red; 
 }
 
 form {
@@ -374,11 +381,25 @@ input {
     <div class="contactherocontent">
       <div class="translucent-box">
     <h1>Contact & Credits Page!</h1>
-    <p>Welcome to the About page. here I will give a brief rundown on myself and the developers of the game. <br> Here's my contact if you need to reach out: rexx.j.parra@gmail.com </p>
+    <p>Welcome to the Credits page. here I will give a brief rundown the developers of the game, of which greatly deserves the recognition! <br>  </p>
      <h2>Developer Credits</h2>
-     <p>.</p>
-     <h2>Form</h2>
+     <p><em>Hakita:</em></p>
+     <li>All direction, game design (including level design, except museum), sound design (including music, except public domain), story and animation</li>
+     <p><em>Victoria Holland:</em></p>
+     <li>Lead 3D artist</li>
+     <p><em>PITR & Heckteck:</em></p>
+     <li>Lead Programmers</li>
+     <p><em>Dave Oshrey (or Big Dave):</em></p>
+     <li>CEO of New Blood Interactive (game publisher)</li>
+     <p><em>Meganeko, HEALTH, & Keygen Church:</em></p>
+     <li>Guest Composers</li>
+     <p><em>And All other contributors!</em></p>
 
+        <h3>Fun Fact:</h3>
+        <p>Instead of proper scrolling screen credits, Ultrakill as an interactive, in-game museum featuring everyone who worked on the game, cut content, and secret insight on the development throughout their process!</p>
+
+     <h2>Contact Form</h2>
+        <p>Here's my contact if you need to reach out beyond just the form: rexx.j.parra@gmail.com</p>
      <form action="https://formspree.io/f/maeqpdpn" method="POST" id="contact-form">
      <p><label for="first-name">First Name</label>
       <input type="text" id="first-name" name="first-name" required></p>
