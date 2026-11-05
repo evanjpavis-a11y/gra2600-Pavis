@@ -201,7 +201,34 @@ main {
   z-index: 1; /* Lower than the container so it stays underneath the dropdowns */
 }
 
+.translucent-box img {
+    width: 100%;         /* Forces the image to fill the box horizontally */
+    max-width: 100%;     /* Prevents it from ever spilling outside the box */
+    height: auto;        /* Maintains the original aspect ratio so it doesn't stretch distortion-style */
+    display: block;      /* Removes awkward blank spaces below the image */
+    margin: 15px auto;   /* Centers the image with clean breathing room top and bottom */
+    border-radius: 4px; 
+}
 
+.card button {
+    background-color: #0c1017;      /* Matches your dark container color */
+    color: #ffffff;                 /* Clean white text */
+    font-family: 'Share Tech Mono', monospace; /* Matches your submenu text style */
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: 2px solid #ff003c;      /* Clean red outline */
+    border-radius: 0px;             /* Hard, sharp retro corners */
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    margin-top: 15px;
+}
+
+/* Fills the button with red when hovered */
+.card button:hover {
+    background-color: #ff003c;
+    color: #ffffff;
+}
 /* ============================================
    MEDIA QUERY — MOBILE (max-width: 768px)
    ============================================ */
@@ -302,7 +329,7 @@ main {
   <!-- Layout role: centers header content -->
   <div class="logobox">
     
-    <a class="logo" href="index.html">an incorrect summary of ultrakill</a>
+    <a class="logo" href="index.html">an incorrect synopsis of ultrakill</a>
   </div>
   <input type="checkbox" id="nav-toggle">
   <label class="hamburger" for="nav-toggle" aria-label="Toggle navigation">
@@ -340,12 +367,42 @@ main {
       <div class="translucent-box">
     <h1>Reviews Listing</h1>
     <p>If you intentionally clicked here instead of one of the reviews themselves, then I'll show each review here and describe how they all recieve and rate the game.</p>
+
+
      <h2>Review 1 & Major Notes</h2>
-     <p>.</p>
+  <div class="card">
+    <img src="assets/LeonMasseyThumb.jpg" alt="you probably shouldnt see this">
+    <h3 class="phero1" style="color:red;">Leon Massey's "You Should Play Ultrakill"</h3>
+    <p><em>"Doom Eternal is all style and a decent amount of substance, like an overexpensive restaurant. Ultrakill is ALL style, ALL substance!"</em></p>
+    <p>Leon considers Ultrakill a masterpiece in the FPS genre for its deceptively simple, yet very in-depth mechanics that all wrap around each other satisfyingly.</p>
+    <p>He praises Ultrakill's player-driven combat, letting you take full control of the pace you want to go at, with a large arsenal variety allowing you to use as few or as many weapons as you please.</p>
+    <a href="preview1.html";>
+    <button>More on the Review</button></a>
+  </div>
+
+
      <h2>Review 2 & Major Notes</h2>
-     <p>.</p>
+     <div class="card">
+      <img src="assets/MentallyUnstableThumb.jpg" alt="you probably shouldnt see this">
+      <h3 class="phero1" style="color:red;">Fridgearc's "Ultrakill - An Fps For The Mentally Unstable"</h3>
+     <p><em>"I went into this game expecting some silly Doom shooter copy with a funny parry with the Devil May Cry score in it. And I left with this game that just innovated in both of these genres..."</em></p>
+     <p>Fridgearc plays through the entire game and makes extensive commentary about his experience and what he enjoyed.</p>
+     <p>He greatly admires how the game SHOWS your progression in skill, rather than tells you, by having you fight multiple enemies that had used to be bosses far earlier in the game.</p>
+    <a href="preview2.html";>
+    <button>More on the Review</button></a>
+      </div>
+
      <h2>Review 3 & Major Notes</h2>
-     <p>.</p>
+     <div class="card">
+      <img src="assets/BestFPSEverThumb.jpg" alt="you probably shouldnt see this">
+      <h3 class="phero1" style="color:red;">GameObsessed's "Why ULTRAKILL Might Be The Best Shooter Ever Made"</h3>
+     <p><em>"Every second playing this game is just pure adrenaline-fueled action that just works perfectly."</em></p>
+     <p>GameObsessed firmly believes that the style meter is one of the best additions to the game, rewarding creative movement and outright encouraging stylish gameplay. The best way to make a game fun, is to of course incentivize having it.</p>
+     <p></p>
+    <a href="preview3.html";>
+    <button>More on the Review</button></a>
+     <p></p>
+  </div>
 </div>
     </section>
 </main>
