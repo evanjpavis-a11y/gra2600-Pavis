@@ -175,7 +175,7 @@ ul.navlist {
 }
 
 ul.navlist li a {
-    color: blue;
+    color: white;
 }
 
 
@@ -190,22 +190,28 @@ ul.navlist li a {
 }
 
 
+/* 1. The Video stays in the absolute back */
 #bg-video {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  object-fit: cover; 
-  z-index: -1;       
-  pointer-events: none; 
+  object-fit: cover;
+  z-index: -1; 
+  pointer-events: none;
 }
 
+/* 2. Elevate your header/navigation to the top layer */
+.container {
+  position: relative;
+  z-index: 10; /* Higher number forces the menu to sit on top of everything */
+}
 
-.container, 
+/* 3. Keep the content box above the video, but below the menu */
 main {
   position: relative;
-  z-index: 1; 
+  z-index: 1; /* Lower than the container so it stays underneath the dropdowns */
 }
 
 

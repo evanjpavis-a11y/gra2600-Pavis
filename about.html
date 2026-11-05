@@ -7,7 +7,7 @@
 
 body {
     background-color: #000000; 
-    background-image: url('/assets/UltraMainMenu.png');
+    background-image: url('/assets/SurfaceBG.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -174,15 +174,38 @@ ul.navlist {
 }
 
 ul.navlist li a {
-    color: blue;
+    color: white;
 }
 
+
+/* Styling your translucent box to let the video peek through beautifully */
+.translucent-box {
+  background: rgba(0, 0, 0, 0.65); /* Dark tint with 65% transparency */
+  backdrop-filter: blur(5px); /* Soft blur effect on the video behind the text */
+  padding: 30px;
+  border-radius: 8px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* 2. Elevate your header/navigation to the top layer */
+.container {
+  position: relative;
+  z-index: 10; /* Higher number forces the menu to sit on top of everything */
+}
+
+/* 3. Keep the content box above the video, but below the menu */
+main {
+  position: relative;
+  z-index: 1; /* Lower than the container so it stays underneath the dropdowns */
+}
 
 
 /* ============================================
    MEDIA QUERY — MOBILE (max-width: 768px)
    ============================================ */
-@media (max-width: 576px) {
+@media (max-width: 768px) {
  
     /* Header scaling */
     h1 {
@@ -272,6 +295,8 @@ ul.navlist li a {
     background-color: #ff0000; /* makes the x red */
 }
 }
+
+
  </style>
   <div class="container">
   <!-- Layout role: centers header content -->
@@ -285,14 +310,14 @@ ul.navlist li a {
     <span></span>
     <span></span>
     <span></span>
-</label>
+  </label>
   <nav>
     <!-- Semantic role: primary navigation -->
     <ul class="navlist">
       <!-- Semantic role: list of navigation links -->
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact/Credits</a></li>
+      <li><a href="contact.html">Contact</a></li>
       
       <li class="has-dropdown">
         <a href="previews.html">Game Reviews</a>
